@@ -1,19 +1,11 @@
 import React from "react";
+import Usuario from "./Usuario";
 
 function SideBar() {
   return (
     <div class="sidebar">
-        <div class="usuario">
-          <img src="assets/img/catanacomics.svg" />
-          <div class="texto">
-            <strong>catanacomics</strong>
-            <span>
-              Catana
-              <ion-icon name="pencil"></ion-icon>
-            </span>
-          </div>
-        </div>
-
+        <Usuario />
+        
         <div class="sugestoes">
           <div class="titulo">
             Sugestões para você
