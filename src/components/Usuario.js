@@ -5,9 +5,13 @@ function Usuario() {
   function editUser() {
     setUser(prompt("Qual o novo nome de usuário?"));
   }
+  const [userImage, setUserImage] = useState("assets/img/catanacomics.svg");
+  function editUserImage() {
+    setUserImage(prompt("Qual a nova imagem de perfil (URL)?"));
+  }
   return (
     <div class="usuario">
-      <img src="assets/img/catanacomics.svg" />
+      <img onClick={editUserImage} src={userImage} />
       <div class="texto">
         <strong>catanacomics</strong>
         <span>
