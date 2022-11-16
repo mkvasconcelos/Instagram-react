@@ -7,17 +7,17 @@ function Sugestoes() {
     <Sugestao title="chibirdart" />,
     <Sugestao title="razoesparaacreditar" />,
     <Sugestao title="adorable_animals" />,
-    <Sugestao title="smallcutecats" />
+    <Sugestao title="smallcutecats" />,
   ];
   return (
     <div class="sugestoes">
       <div class="titulo">
         Sugestões para você
         <div>Ver tudo</div>
-        {sugestoes.map((sugestao) => (
-          <div>{sugestao}</div>
-        ))}
       </div>
+      {sugestoes.map((sugestao) => (
+        <div>{sugestao}</div>
+      ))}
     </div>
   );
 }
