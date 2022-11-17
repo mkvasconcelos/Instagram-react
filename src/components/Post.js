@@ -22,7 +22,7 @@ function Post(props) {
   }
 
   return (
-    <div class="post">
+    <div data-test="post" class="post">
       <div class="topo">
         <div class="usuario">
           <img src={`assets/img/${props.user}.svg`} />
@@ -37,6 +37,7 @@ function Post(props) {
         <img
           onClick={handleClickLikeImage}
           src={`assets/img/${props.image}.svg`}
+          data-test="post-image"
         />
       </div>
 
@@ -47,6 +48,7 @@ function Post(props) {
               onClick={handleClickLike}
               class={unlike ? "button-like" : ""}
               name={unlike ? "heart" : "heart-outline"}
+              data-test="like-post"
             ></ion-icon>
             <ion-icon name="chatbubble-outline"></ion-icon>
             <ion-icon name="paper-plane-outline"></ion-icon>
@@ -55,6 +57,7 @@ function Post(props) {
             <ion-icon
               onClick={handleClickSaved}
               name={unsaved ? "bookmark" : "bookmark-outline"}
+              data-test="save-post"
             ></ion-icon>
           </div>
         </div>
@@ -63,7 +66,9 @@ function Post(props) {
           <img src={`assets/img/${props.like}.svg`} />
           <div class="texto">
             Curtido por <strong>{props.like}</strong> e{" "}
-            <strong>outras {likes} pessoas</strong>
+            <strong>
+              outras <span data-test="likes-number">{likes}</span> pessoas
+            </strong>
           </div>
         </div>
       </div>

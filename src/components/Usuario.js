@@ -10,13 +10,17 @@ function Usuario() {
     setUserImage(prompt("Qual a nova imagem de perfil (URL)?"));
   }
   return (
-    <div class="usuario">
-      <img onClick={editUserImage} src={userImage} />
+    <div class="usuario" data-test="user">
+      <img data-test="profile-image" onClick={editUserImage} src={userImage} />
       <div class="texto">
         <strong>catanacomics</strong>
-        <span>
+        <span data-test="name">
           {user}
-          <ion-icon onClick={editUser} name="pencil"></ion-icon>
+          <ion-icon
+            data-test="edit-name"
+            onClick={editUser}
+            name="pencil"
+          ></ion-icon>
         </span>
       </div>
     </div>
