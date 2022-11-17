@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function Usuario() {
+export default function Usuario() {
   const [user, setUser] = useState("Catana");
   function editUser() {
     setUser(prompt("Qual o novo nome de usuário?"));
@@ -26,5 +26,3 @@ function Usuario() {
     </div>
   );
 }
-
-export default Usuario;

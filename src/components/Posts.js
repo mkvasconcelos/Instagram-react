@@ -1,7 +1,7 @@
 import React from "react";
 import Post from "./Post";
 
-function Posts() {
+export default function Posts() {
   const posts = [
     { user: "meowed", image: "gato-telefone", like: "respondeai" },
     { user: "barked", image: "dog", like: "adorable_animals" },
@@ -14,5 +14,3 @@ function Posts() {
     </div>
   );
 }
-
-export default Posts;

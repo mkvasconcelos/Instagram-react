@@ -1,7 +1,7 @@
 import React from "react";
 import Story from "./Story";
 
-function Stories() {
+export default function Stories() {
   const stories = [
     "9gag",
     "meowed",
@@ -24,5 +24,3 @@ function Stories() {
     </div>
   );
 }
-
-export default Stories;

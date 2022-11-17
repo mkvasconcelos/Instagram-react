@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function Post(props) {
+export default function Post(props) {
   const [unlike, setLike] = useState(false);
   const [unsaved, setSaved] = useState(false);
   const [likes, setLikes] = useState(100);
@@ -75,5 +75,3 @@ function Post(props) {
     </div>
   );
 }
-
-export default Post;

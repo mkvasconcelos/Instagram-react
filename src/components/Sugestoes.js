@@ -1,7 +1,7 @@
 import React from "react";
 import Sugestao from "./Sugestao";
 
-function Sugestoes() {
+export default function Sugestoes() {
   const sugestoes = [
     "bad.vibes.memes",
     "chibirdart",
@@ -21,5 +21,3 @@ function Sugestoes() {
     </div>
   );
 }
-
-export default Sugestoes;

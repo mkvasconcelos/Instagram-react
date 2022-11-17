@@ -1,6 +1,6 @@
 import React from "react";
 
-function Sugestao(props) {
+export default function Sugestao(props) {
   return (
     <div class="sugestao">
       <div class="usuario">
@@ -15,5 +15,3 @@ function Sugestao(props) {
     </div>
   );
 }
-
-export default Sugestao;
