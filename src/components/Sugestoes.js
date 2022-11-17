@@ -3,11 +3,11 @@ import Sugestao from "./Sugestao";
 
 function Sugestoes() {
   const sugestoes = [
-    <Sugestao title="bad.vibes.memes" />,
-    <Sugestao title="chibirdart" />,
-    <Sugestao title="razoesparaacreditar" />,
-    <Sugestao title="adorable_animals" />,
-    <Sugestao title="smallcutecats" />,
+    "bad.vibes.memes",
+    "chibirdart",
+    "razoesparaacreditar",
+    "adorable_animals",
+    "smallcutecats",
   ];
   return (
     <div class="sugestoes">
@@ -15,8 +15,8 @@ function Sugestoes() {
         Sugestões para você
         <div>Ver tudo</div>
       </div>
-      {sugestoes.map((sugestao) => (
-        <div>{sugestao}</div>
+      {sugestoes.map((s) => (
+        <Sugestao title={s} />
       ))}
     </div>
   );
