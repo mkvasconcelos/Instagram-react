@@ -1,6 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 
 function Post(props) {
+  const [unlike, setLike] = useState(false);
+
+  function handleClick() {
+    setLike((current) => !current);
+  }
+
   return (
     <div class="post">
       <div class="topo">
@@ -25,7 +31,10 @@ function Post(props) {
             <ion-icon name="paper-plane-outline"></ion-icon>
           </div>
           <div>
-            <ion-icon name="bookmark-outline"></ion-icon>
+            <ion-icon
+              onClick={handleClick}
+              name={unlike ? "bookmark" : "bookmark-outline"}
+            ></ion-icon>
           </div>
         </div>
 
