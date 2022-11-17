@@ -2,9 +2,23 @@ import React, { useState } from "react";
 
 function Post(props) {
   const [unlike, setLike] = useState(false);
+  const [unsaved, setSaved] = useState(false);
+  const [likes, setLikes] = useState(100);
 
-  function handleClick() {
+  function handleClickLike() {
     setLike((current) => !current);
+    setLikes(unlike ? likes - 1 : likes + 1);
+  }
+
+  function handleClickLikeImage() {
+    if (!unlike) {
+      setLike((current) => !current);
+      setLikes(unlike ? likes - 1 : likes + 1);
+    }
+  }
+
+  function handleClickSaved() {
+    setSaved((current) => !current);
   }
 
   return (
@@ -20,20 +34,27 @@ function Post(props) {
       </div>
 
       <div class="conteudo">
-        <img src={`assets/img/${props.image}.svg`} />
+        <img
+          onClick={handleClickLikeImage}
+          src={`assets/img/${props.image}.svg`}
+        />
       </div>
 
       <div class="fundo">
         <div class="acoes">
           <div>
-            <ion-icon name="heart-outline"></ion-icon>
+            <ion-icon
+              onClick={handleClickLike}
+              class={unlike ? "button-like" : ""}
+              name={unlike ? "heart" : "heart-outline"}
+            ></ion-icon>
             <ion-icon name="chatbubble-outline"></ion-icon>
             <ion-icon name="paper-plane-outline"></ion-icon>
           </div>
           <div>
             <ion-icon
-              onClick={handleClick}
-              name={unlike ? "bookmark" : "bookmark-outline"}
+              onClick={handleClickSaved}
+              name={unsaved ? "bookmark" : "bookmark-outline"}
             ></ion-icon>
           </div>
         </div>
@@ -42,7 +63,7 @@ function Post(props) {
           <img src={`assets/img/${props.like}.svg`} />
           <div class="texto">
             Curtido por <strong>{props.like}</strong> e{" "}
-            <strong>outras 101.523 pessoas</strong>
+            <strong>outras {likes} pessoas</strong>
           </div>
         </div>
       </div>
