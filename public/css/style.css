@@ -310,9 +310,45 @@ body {
   display: none !important;
 }
 
-.button-like{
+.conteudo{
+  position: relative;
+}
+
+#button-like{
   color: red;
 }
+
+#like-coracao{
+  position: absolute;
+  font-size: 145px;
+  left: calc((100% - 145px)/2);
+  top: calc((100% - 145px)/2);
+  color: white;
+  animation: cssAnimation 0.5s forwards, cssScaling 0.3s forwards;
+  visibility: visible;
+} 
+
+@keyframes cssAnimation {
+  to   { visibility: hidden;}
+}
+
+@keyframes cssScaling {
+  0% {
+    transform: scale(0.2);
+}
+100% {
+    transform: scale(1.0);
+}
+}
+
+#display-none{
+  display: none;
+}
+/* 
+#like-coracao-click{
+  transition: transform 3s;
+  transform: scale(1);
+} */
 
 @media (max-width: 935px) {
   .sidebar {
@@ -393,6 +429,12 @@ body {
   .instagram-mobile {
     position: relative;
     top: 4px;
+  }
+
+  #like-coracao{
+    font-size: 85px;
+    left: calc((100% - 85px)/2);
+    top: calc((100% - 85px)/2);
   }
 }
 

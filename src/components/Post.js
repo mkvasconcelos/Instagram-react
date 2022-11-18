@@ -40,6 +40,10 @@ export default function Post(props) {
           alt="imagem-post"
           data-test="post-image"
         />
+        <ion-icon
+          id={unlike ? "like-coracao" : "display-none"}
+          name="heart"
+        ></ion-icon>
       </div>
 
       <div className="fundo">
@@ -47,7 +51,7 @@ export default function Post(props) {
           <div>
             <ion-icon
               onClick={handleClickLike}
-              className={unlike ? "button-like" : ""}
+              id={unlike ? "button-like" : ""}
               name={unlike ? "heart" : "heart-outline"}
               data-test="like-post"
             ></ion-icon>
