@@ -2,11 +2,11 @@ import React from "react";
 
 export default function Story(props) {
   return (
-    <div class="story">
-      <div class="imagem">
-        <img src={`assets/img/${props.title}.svg`} />
+    <div className="story">
+      <div className="imagem">
+        <img src={`assets/img/${props.title}.svg`} alt="story" />
       </div>
-      <div class="usuario">{props.title}</div>
+      <div className="usuario">{props.title}</div>
     </div>
   );
 }

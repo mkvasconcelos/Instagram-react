@@ -22,31 +22,32 @@ export default function Post(props) {
   }
 
   return (
-    <div data-test="post" class="post">
-      <div class="topo">
-        <div class="usuario">
-          <img src={`assets/img/${props.user}.svg`} />
+    <div data-test="post" className="post">
+      <div className="topo">
+        <div className="usuario">
+          <img src={`assets/img/${props.user}.svg`} alt="imagem-usuario" />
           {props.user}
         </div>
-        <div class="acoes">
+        <div className="acoes">
           <ion-icon name="ellipsis-horizontal"></ion-icon>
         </div>
       </div>
 
-      <div class="conteudo">
+      <div className="conteudo">
         <img
           onClick={handleClickLikeImage}
           src={`assets/img/${props.image}.svg`}
+          alt="imagem-post"
           data-test="post-image"
         />
       </div>
 
-      <div class="fundo">
-        <div class="acoes">
+      <div className="fundo">
+        <div className="acoes">
           <div>
             <ion-icon
               onClick={handleClickLike}
-              class={unlike ? "button-like" : ""}
+              className={unlike ? "button-like" : ""}
               name={unlike ? "heart" : "heart-outline"}
               data-test="like-post"
             ></ion-icon>
@@ -62,9 +63,9 @@ export default function Post(props) {
           </div>
         </div>
 
-        <div class="curtidas">
-          <img src={`assets/img/${props.like}.svg`} />
-          <div class="texto">
+        <div className="curtidas">
+          <img src={`assets/img/${props.like}.svg`} alt="imagem-curtida" />
+          <div className="texto">
             Curtido por <strong>{props.like}</strong> e{" "}
             <strong>
               outras <span data-test="likes-number">{likes}</span> pessoas

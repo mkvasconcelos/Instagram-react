@@ -10,9 +10,14 @@ export default function Usuario() {
     setUserImage(prompt("Qual a nova imagem de perfil (URL)?"));
   }
   return (
-    <div class="usuario" data-test="user">
-      <img data-test="profile-image" onClick={editUserImage} src={userImage} />
-      <div class="texto">
+    <div className="usuario" data-test="user">
+      <img
+        data-test="profile-image"
+        onClick={editUserImage}
+        src={userImage}
+        alt="logo-profile"
+      />
+      <div className="texto">
         <strong>catanacomics</strong>
         <span data-test="name">
           {user}

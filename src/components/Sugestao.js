@@ -2,16 +2,16 @@ import React from "react";
 
 export default function Sugestao(props) {
   return (
-    <div class="sugestao">
-      <div class="usuario">
-        <img src={`assets/img/${props.title}.svg`} />
-        <div class="texto">
-          <div class="nome">{props.title}</div>
-          <div class="razao">Segue você</div>
+    <div className="sugestao">
+      <div className="usuario">
+        <img src={`assets/img/${props.title}.svg`} alt="logo-usuario" />
+        <div className="texto">
+          <div className="nome">{props.title}</div>
+          <div className="razao">Segue você</div>
         </div>
       </div>
 
-      <div class="seguir">Seguir</div>
+      <div className="seguir">Seguir</div>
     </div>
   );
 }

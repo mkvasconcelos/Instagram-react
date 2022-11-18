@@ -13,12 +13,12 @@ export default function Stories() {
     "memeriagourmet",
   ];
   return (
-    <div class="stories">
+    <div className="stories">
       {stories.map((s) => (
-        <Story title={s} />
+        <Story key={s} title={s} />
       ))}
       ;
-      <div class="setinha">
+      <div className="setinha">
         <ion-icon name="chevron-forward-circle"></ion-icon>
       </div>
     </div>

@@ -7,9 +7,9 @@ export default function Posts() {
     { user: "barked", image: "dog", like: "adorable_animals" },
   ];
   return (
-    <div class="posts">
+    <div className="posts">
       {posts.map((p) => (
-        <Post user={p.user} image={p.image} like={p.like} />
+        <Post key={p.user} user={p.user} image={p.image} like={p.like} />
       ))}
     </div>
   );

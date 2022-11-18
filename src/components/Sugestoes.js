@@ -10,13 +10,13 @@ export default function Sugestoes() {
     "smallcutecats",
   ];
   return (
-    <div class="sugestoes">
-      <div class="titulo">
+    <div className="sugestoes">
+      <div className="titulo">
         Sugestões para você
         <div>Ver tudo</div>
       </div>
       {sugestoes.map((s) => (
-        <Sugestao title={s} />
+        <Sugestao key={s} title={s} />
       ))}
     </div>
   );
