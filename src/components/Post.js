@@ -10,8 +10,19 @@ export default function Post(props) {
     setLikes(unlike ? likes - 1 : likes + 1);
   }
 
-  function handleClickLikeImage() {
-    if (!unlike) {
+  function handleClickLikeImage(e) {
+    // switch (e.detail) {
+    //   case 1:
+    //     console.log("click");
+    //     break;
+    //   case 2:
+    //     console.log("double click");
+    //     break;
+    //   case 3:
+    //     console.log("triple click");
+    //     break;
+    // }
+    if (!unlike & (e.detail === 2)) {
       setLike((current) => !current);
       setLikes(unlike ? likes - 1 : likes + 1);
     }
