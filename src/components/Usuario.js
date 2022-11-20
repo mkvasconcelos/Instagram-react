@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 
-export default function Usuario() {
-  const [user, setUser] = useState("Catana");
+export default function Usuario(props) {
+  const [user, setUser] = useState("");
   function editUser() {
     setUser(prompt("Qual o novo nome de usuário?"));
   }
-  const [userImage, setUserImage] = useState("assets/img/catanacomics.svg");
+  const [userImage, setUserImage] = useState("");
   function editUserImage() {
     setUserImage(prompt("Qual a nova imagem de perfil (URL)?"));
   }
@@ -14,13 +14,13 @@ export default function Usuario() {
       <img
         data-test="profile-image"
         onClick={editUserImage}
-        src={userImage}
+        src={!userImage ? props.image : userImage}
         alt="logo-profile"
       />
       <div className="texto">
         <strong>catanacomics</strong>
         <span data-test="name">
-          {user}
+          {!user ? props.user : user}
           <ion-icon
             data-test="edit-name"
             onClick={editUser}
