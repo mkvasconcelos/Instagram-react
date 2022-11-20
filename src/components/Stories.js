@@ -1,5 +1,6 @@
 import React from "react";
 import Story from "./Story";
+import { IoChevronForwardCircle } from "react-icons/io5";
 
 export default function Stories() {
   const stories = [
@@ -19,7 +20,8 @@ export default function Stories() {
       ))}
       ;
       <div className="setinha">
-        <ion-icon name="chevron-forward-circle"></ion-icon>
+        {/* <ion-icon name="chevron-forward-circle"></ion-icon> */}
+        <IoChevronForwardCircle />
       </div>
     </div>
   );

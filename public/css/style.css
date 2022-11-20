@@ -25,7 +25,11 @@ body {
   z-index: 2;
 }
 
-.navbar ion-icon, .navbar img {
+/* .navbar ion-icon, .navbar img {
+  cursor: pointer;
+} */
+
+.pointer, .navbar img {
   cursor: pointer;
 }
 
@@ -66,7 +70,11 @@ body {
   text-align: center;
 }
 
-.navbar .icones ion-icon {
+/* .navbar .icones ion-icon {
+  margin: 0 5px;
+} */
+
+.navbar .icones .pointer {
   margin: 0 5px;
 }
 
@@ -176,7 +184,11 @@ body {
   margin-right: 10px;
 }
 
-.post .usuario, .post .topo img, .post .fundo img, .post ion-icon, .post strong, .usuario ion-icon, .usuario > img, .conteudo > img {
+/* .post .usuario, .post .topo img, .post .fundo img, .post ion-icon, .post strong, .usuario ion-icon, .usuario > img, .conteudo > img {
+  cursor: pointer;
+} */
+
+.post .usuario, .post .topo img, .post .fundo img, .post strong, .usuario > img, .conteudo > img {
   cursor: pointer;
 }
 
@@ -191,7 +203,11 @@ body {
   font-size: 24px;
 }
 
-.post .fundo .acoes div:first-child ion-icon {
+/* .post .fundo .acoes div:first-child ion-icon {
+  margin-right: 6px;
+} */
+
+.post .fundo .acoes div:first-child .pointer {
   margin-right: 6px;
 }
 
@@ -318,6 +334,11 @@ body {
   color: red;
 }
 
+#button-unlike{
+  color: white;
+  border: black;
+}
+
 #like-coracao{
   position: absolute;
   font-size: 145px;
@@ -340,11 +361,6 @@ body {
 #display-none{
   display: none;
 }
-/* 
-#like-coracao-click{
-  transition: transform 3s;
-  transform: scale(1);
-} */
 
 @media (max-width: 935px) {
   .sidebar {
@@ -434,11 +450,18 @@ body {
   }
 }
 
-ion-icon {
+/* ion-icon {
+  visibility: visible;
+} */
+
+.pointer {
   visibility: visible;
 }
 
-.usuario ion-icon {
+/* .usuario ion-icon {
+  margin-left: 5px;
+} */
+
+.usuario .pointer {
   margin-left: 5px;
 }
-

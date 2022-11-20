@@ -1,4 +1,12 @@
 import React, { useState } from "react";
+import { AiOutlineEllipsis } from "react-icons/ai";
+import { BsFillHeartFill, BsHeart } from "react-icons/bs";
+import {
+  IoChatbubbleOutline,
+  IoPaperPlaneOutline,
+  IoBookmarkOutline,
+  IoBookmark,
+} from "react-icons/io5";
 
 export default function Post(props) {
   const [unlike, setLike] = useState(false);
@@ -32,7 +40,8 @@ export default function Post(props) {
           {props.user}
         </div>
         <div className="acoes">
-          <ion-icon name="ellipsis-horizontal"></ion-icon>
+          {/* <ion-icon name="ellipsis-horizontal"></ion-icon> */}
+          <AiOutlineEllipsis className="pointer" />
         </div>
       </div>
 
@@ -43,27 +52,61 @@ export default function Post(props) {
           alt="imagem-post"
           data-test="post-image"
         />
-        <ion-icon id={heartId} name="heart"></ion-icon>
+        <BsFillHeartFill className="pointer" id={heartId} />
+        {/* <ion-icon id={heartId} name="heart"></ion-icon> */}
       </div>
 
       <div className="fundo">
         <div className="acoes">
           <div>
-            <ion-icon
+            {/* <ion-icon
               onClick={handleClickLike}
               id={unlike ? "button-like" : ""}
               name={unlike ? "heart" : "heart-outline"}
               data-test="like-post"
-            ></ion-icon>
-            <ion-icon name="chatbubble-outline"></ion-icon>
-            <ion-icon name="paper-plane-outline"></ion-icon>
+            ></ion-icon> */}
+            {/* <ion-icon name="chatbubble-outline"></ion-icon> */}
+            {/* <ion-icon name="paper-plane-outline"></ion-icon> */}
+            <>
+              {unlike ? (
+                <BsFillHeartFill
+                  onClick={handleClickLike}
+                  id="button-like"
+                  className="pointer"
+                  data-test="like-post"
+                />
+              ) : (
+                <BsHeart
+                  onClick={handleClickLike}
+                  className="pointer"
+                  data-test="like-post"
+                />
+              )}
+            </>
+            <IoChatbubbleOutline className="pointer" />
+            <IoPaperPlaneOutline className="pointer" />
           </div>
           <div>
-            <ion-icon
+            {/* <ion-icon
               onClick={handleClickSaved}
               name={unsaved ? "bookmark" : "bookmark-outline"}
               data-test="save-post"
-            ></ion-icon>
+            ></ion-icon> */}
+            <>
+              {unsaved ? (
+                <IoBookmark
+                  onClick={handleClickSaved}
+                  className="pointer"
+                  data-test="save-post"
+                />
+              ) : (
+                <IoBookmarkOutline
+                  onClick={handleClickSaved}
+                  className="pointer"
+                  data-test="save-post"
+                />
+              )}
+            </>
           </div>
         </div>
 

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { IoPencil } from "react-icons/io5";
 
 export default function Usuario(props) {
   const [user, setUser] = useState("");
@@ -21,11 +22,16 @@ export default function Usuario(props) {
         <strong>catanacomics</strong>
         <span data-test="name">
           {!user ? props.user : user}
-          <ion-icon
+          {/* <ion-icon
             data-test="edit-name"
             onClick={editUser}
             name="pencil"
-          ></ion-icon>
+          ></ion-icon> */}
+          <IoPencil
+            data-test="edit-name"
+            className="pointer"
+            onClick={editUser}
+          />
         </span>
       </div>
     </div>
