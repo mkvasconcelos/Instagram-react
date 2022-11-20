@@ -67,22 +67,17 @@ export default function Post(props) {
             ></ion-icon> */}
             {/* <ion-icon name="chatbubble-outline"></ion-icon> */}
             {/* <ion-icon name="paper-plane-outline"></ion-icon> */}
-            <>
+            <span data-test="like-post">
               {unlike ? (
                 <BsFillHeartFill
                   onClick={handleClickLike}
                   id="button-like"
                   className="pointer"
-                  data-test="like-post"
                 />
               ) : (
-                <BsHeart
-                  onClick={handleClickLike}
-                  className="pointer"
-                  data-test="like-post"
-                />
+                <BsHeart onClick={handleClickLike} className="pointer" />
               )}
-            </>
+            </span>
             <IoChatbubbleOutline className="pointer" />
             <IoPaperPlaneOutline className="pointer" />
           </div>
@@ -92,21 +87,16 @@ export default function Post(props) {
               name={unsaved ? "bookmark" : "bookmark-outline"}
               data-test="save-post"
             ></ion-icon> */}
-            <>
+            <div data-test="save-post">
               {unsaved ? (
-                <IoBookmark
-                  onClick={handleClickSaved}
-                  className="pointer"
-                  data-test="save-post"
-                />
+                <IoBookmark onClick={handleClickSaved} className="pointer" />
               ) : (
                 <IoBookmarkOutline
                   onClick={handleClickSaved}
                   className="pointer"
-                  data-test="save-post"
                 />
               )}
-            </>
+            </div>
           </div>
         </div>
 
