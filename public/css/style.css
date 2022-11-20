@@ -324,13 +324,9 @@ body {
   left: calc((100% - 145px)/2);
   top: calc((100% - 145px)/2);
   color: white;
-  animation: cssAnimation 0.5s forwards, cssScaling 0.3s forwards;
+  animation: cssScaling 0.3s forwards;
   visibility: visible;
 } 
-
-@keyframes cssAnimation {
-  to   { visibility: hidden;}
-}
 
 @keyframes cssScaling {
   0% {

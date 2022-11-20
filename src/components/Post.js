@@ -2,18 +2,21 @@ import React, { useState } from "react";
 
 export default function Post(props) {
   const [unlike, setLike] = useState(false);
+  const [heartId, setHeartId] = useState("display-none");
   const [unsaved, setSaved] = useState(false);
-  const [likes, setLikes] = useState(100);
+  const [likesAmount, setLikesAmount] = useState(100);
 
   function handleClickLike() {
     setLike((current) => !current);
-    setLikes(unlike ? likes - 1 : likes + 1);
+    setLikesAmount(unlike ? likesAmount - 1 : likesAmount + 1);
   }
 
   function handleClickLikeImage(e) {
-    if (!unlike & (e.detail === 2)) {
-      setLike((current) => !current);
-      setLikes(unlike ? likes - 1 : likes + 1);
+    if (e.detail === 2) {
+      setLike(true);
+      setLikesAmount(unlike ? likesAmount : likesAmount + 1);
+      setHeartId("like-coracao");
+      setTimeout(() => setHeartId("display-none"), 500);
     }
   }
 
@@ -40,10 +43,7 @@ export default function Post(props) {
           alt="imagem-post"
           data-test="post-image"
         />
-        <ion-icon
-          id={unlike ? "like-coracao" : "display-none"}
-          name="heart"
-        ></ion-icon>
+        <ion-icon id={heartId} name="heart"></ion-icon>
       </div>
 
       <div className="fundo">
@@ -72,7 +72,7 @@ export default function Post(props) {
           <div className="texto">
             Curtido por <strong>{props.like}</strong> e{" "}
             <strong>
-              outras <span data-test="likes-number">{likes}</span> pessoas
+              outras <span data-test="likes-number">{likesAmount}</span> pessoas
             </strong>
           </div>
         </div>
