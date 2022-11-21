@@ -87,7 +87,7 @@ export default function Post(props) {
               name={unsaved ? "bookmark" : "bookmark-outline"}
               data-test="save-post"
             ></ion-icon> */}
-            <div data-test="save-post">
+            <span data-test="save-post">
               {unsaved ? (
                 <IoBookmark onClick={handleClickSaved} className="pointer" />
               ) : (
@@ -96,7 +96,7 @@ export default function Post(props) {
                   className="pointer"
                 />
               )}
-            </div>
+            </span>
           </div>
         </div>
 
